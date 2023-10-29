@@ -1,0 +1,22 @@
+
+func main() {
+	number := 16.0
+	squareRoot := math.Sqrt(number)
+	fmt.Printf("The square root of %f is %f\n", number, squareRoot)
+
+	currentTime := time.Now()
+	fmt.Printf("Current time: %s\n", currentTime.Format("2006-01-02 15:04:05"))
+
+	username := os.Getenv("USER")
+	fmt.Printf("Username: %s\n", username)
+
+	resp, err := http.Get("https://www.example.com")
+	if err != nil {
+		fmt.Println("Error:", err)
+		return
+	}
+	defer resp.Body.Close()
+	fmt.Printf("HTTP Status Code: %d\n", resp.Status)
+
+	fmt.Println("Hello, world!")
+}
